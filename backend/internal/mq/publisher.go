@@ -65,7 +65,11 @@ func (p *Publisher) publish(ctx context.Context, event string, payload any) erro
 		return fmt.Errorf("marshal message: %w", err)
 	}
 
-	return p.channel.PublishWithContext(ctx, p.cfg.Exchange, p.cfg.RoutingKey, false, false, amqp.Publishing{
+	if err := ctx.Err(); err != nil {
+		return err
+	}
+
+	return p.channel.Publish(p.cfg.Exchange, p.cfg.RoutingKey, false, false, amqp.Publishing{
 		ContentType: p.cfg.ContentType,
 		Body:        body,
 	})

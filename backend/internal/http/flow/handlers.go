@@ -41,7 +41,7 @@ func (h Handlers) Create(c *gin.Context) {
 		return
 	}
 
-	flow, err := h.Service.Create(c.Request.Context(), flow.CreateInput{
+	created, err := h.Service.Create(c.Request.Context(), flow.CreateInput{
 		Name:        req.Name,
 		Description: req.Description,
 		Definition:  req.Definition,
@@ -51,11 +51,11 @@ func (h Handlers) Create(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(http.StatusCreated, flow)
+	c.JSON(http.StatusCreated, created)
 }
 
 func (h Handlers) Get(c *gin.Context) {
-	flow, err := h.Service.Get(c.Request.Context(), c.Param("id"))
+	result, err := h.Service.Get(c.Request.Context(), c.Param("id"))
 	if err != nil {
 		status := http.StatusInternalServerError
 		if flow.IsNotFound(err) {
@@ -64,7 +64,7 @@ func (h Handlers) Get(c *gin.Context) {
 		c.JSON(status, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, flow)
+	c.JSON(http.StatusOK, result)
 }
 
 func (h Handlers) Update(c *gin.Context) {
@@ -74,7 +74,7 @@ func (h Handlers) Update(c *gin.Context) {
 		return
 	}
 
-	flow, err := h.Service.Update(c.Request.Context(), flow.UpdateInput{
+	updated, err := h.Service.Update(c.Request.Context(), flow.UpdateInput{
 		ID:          c.Param("id"),
 		Description: req.Description,
 		Definition:  req.Definition,
@@ -88,5 +88,5 @@ func (h Handlers) Update(c *gin.Context) {
 		c.JSON(status, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, flow)
+	c.JSON(http.StatusOK, updated)
 }
