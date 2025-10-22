@@ -1,0 +1,25 @@
+http:
+  host: 0.0.0.0
+  port: 8080
+  readTimeout: 15s
+  writeTimeout: 15s
+
+database:
+  dsn: postgres://pflow:pflow@localhost:5432/pflow?sslmode=disable
+  maxOpenConnections: 50
+  maxIdleConnections: 10
+  connectionMaxLifetime: 1h
+
+queue:
+  url: amqp://guest:guest@localhost:5672/
+  exchange: pflow.events
+  routingKey: core
+  contentType: application/json
+
+camunda:
+  baseURL: http://localhost:8081/engine-rest
+  username: demo
+  password: demo
+
+telemetry:
+  serviceName: pflow-backend

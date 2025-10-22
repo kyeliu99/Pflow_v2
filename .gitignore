@@ -1,0 +1,12 @@
+# Go
+backend/bin
+backend/config.yaml
+
+# Node
+frontend/node_modules
+frontend/dist
+
+# Editor
+.idea
+.vscode
+.DS_Store
