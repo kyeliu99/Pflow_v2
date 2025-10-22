@@ -7,9 +7,9 @@ import (
 
 	"github.com/streadway/amqp"
 
-	"github.com/example/pflow/backend/internal/config"
-	"github.com/example/pflow/backend/internal/flow"
-	"github.com/example/pflow/backend/internal/workorder"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/config"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/flow"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/workorder"
 )
 
 type Publisher struct {

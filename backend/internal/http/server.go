@@ -8,9 +8,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/example/pflow/backend/internal/config"
-	flowhttp "github.com/example/pflow/backend/internal/http/flow"
-	workorderhttp "github.com/example/pflow/backend/internal/http/workorder"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/config"
+	flowhttp "github.com/kyeliu99/Pflow_v2/backend/internal/http/flow"
+	workorderhttp "github.com/kyeliu99/Pflow_v2/backend/internal/http/workorder"
 )
 
 type Server struct {

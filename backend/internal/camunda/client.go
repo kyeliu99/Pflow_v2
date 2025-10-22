@@ -7,8 +7,8 @@ import (
 
 	"github.com/go-resty/resty/v2"
 
-	"github.com/example/pflow/backend/internal/config"
-	"github.com/example/pflow/backend/internal/flow"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/config"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/flow"
 )
 
 type Client struct {

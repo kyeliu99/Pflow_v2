@@ -8,7 +8,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/example/pflow/backend/internal/config"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/config"
 )
 
 type Database struct {

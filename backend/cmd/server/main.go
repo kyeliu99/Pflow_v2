@@ -7,15 +7,15 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/example/pflow/backend/internal/camunda"
-	"github.com/example/pflow/backend/internal/config"
-	"github.com/example/pflow/backend/internal/flow"
-	httpserver "github.com/example/pflow/backend/internal/http"
-	flowhttp "github.com/example/pflow/backend/internal/http/flow"
-	workorderhttp "github.com/example/pflow/backend/internal/http/workorder"
-	"github.com/example/pflow/backend/internal/mq"
-	"github.com/example/pflow/backend/internal/persistence"
-	"github.com/example/pflow/backend/internal/workorder"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/camunda"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/config"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/flow"
+	httpserver "github.com/kyeliu99/Pflow_v2/backend/internal/http"
+	flowhttp "github.com/kyeliu99/Pflow_v2/backend/internal/http/flow"
+	workorderhttp "github.com/kyeliu99/Pflow_v2/backend/internal/http/workorder"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/mq"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/persistence"
+	"github.com/kyeliu99/Pflow_v2/backend/internal/workorder"
 )
 
 func main() {
